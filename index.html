@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251 /">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отметься!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        h1 {
+            border-bottom: 2px solid black;
+            width: fit-content;
+            margin: auto;
+            padding: 8px;
+            text-shadow: 0px 1px 1px #ddd, 0px 2px 1px #d6d6d6
+        }
+
+        .container {
+            padding: 16px;
+            width: 500px;
+            display: block;
+            margin: 30px auto;
+            background-color: white;
+            box-shadow: 20px 20px 20px 0px rgba(0, 0, 0, 7);
+
+        }
+
+        form {
+            display: grid;
+            padding-top: 20px;
+            margin: auto;
+        }
+
+        body {
+            font-family: 'Righteous', cursive;
+            background-image: linear-gradient(rgba(241, 207, 172, 0.5), rgba(245, 245, 208, 0.5)), url(2107095_generated.jpg);
+            background-attachment: fixed;
+        }
+
+        input {
+            font-family: 'Righteous', cursive;
+            border: none;
+            text-shadow: 0px 1px 1px #ddd;
+        }
+
+        form option {
+            font-family: 'Righteous', cursive;
+            background-color: #ddd;
+            color: black;
+        }
+
+        .baba {
+            font-size: xx-medium;
+            display: block;
+            width: fit-content;
+            margin: auto;
+            line-height: 110%;
+            font-family: 'Righteous', cursive;
+            text-shadow: 0px 1px 1px #ddd;
+            /* padding-top: 30px; */
+        }
+
+        .babas {
+            font-size: xx-large;
+            display: block;
+            width: fit-content;
+            margin: auto;
+            line-height: 110%;
+            font-family: 'Righteous', cursive;
+            text-shadow: 0px 1px 1px #ddd;
+            padding-top: 30px;
+        }
+
+        .cent {
+            text-align: center;
+            line-height: 35%;
+            text-decoration: underline;
+            text-shadow: 0px 1px 1px #ddd, 0px 2px 1px #d6d6d6
+        }
+
+        input[type='text'],
+        input[type='date'],
+        input[type='time'],
+        #dc,
+       
+        input[type='text']:focus,
+        input[type='time']:focus,
+        input[type='date']:focus {
+            outline: none;
+            background-color: #ddd;
+        }
+
+        #dc {
+            display: block;
+            outline: none;
+        }
+
+        sup {
+            color: red;
+        }
+
+        .sub {
+            color: black;
+            background-color: #ff8641;
+            margin: 0px 5px;
+            padding: 6px;
+            cursor: pointer;
+            opacity: 1.8;
+            
+        }
+
+        .res {
+            color: black;
+            background-color: #ead8cd;
+            margin: 0px 5px;
+            padding: 6px;
+            cursor: pointer;
+            opacity: 1.8;
+        }
+        .nav-list  {
+          width: 100%;
+          height:70px;
+          display: inline-block;
+          align-items: center;
+          color: rgb(34, 25, 25);
+          text-decoration: none!important;
+          padding: 20px 25px;
+          background: rgb(191, 155, 155);
+          background-blend-mode: darken;
+          background-size: cover;
+          justify-content: center;
+        }
+
+        .nav-list li{
+            list-style: square;
+            width: max-content;
+            padding: 50px 30px;
+            text-decoration: none;
+            color: white;
+            font-family: 'Righteous', cursive;
+            background-blend-mode: darken;
+            background-size: cover;
+        }
+
+        .nav-list li a:hover{
+            text-decoration: none;
+            color: inherit;
+            background: rgb(195, 163, 163);
+            background-blend-mode: darken;
+            background-size: cover;
+            
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position:relative;
+            top: 0;
+            cursor: pointer;
+            text-decoration: none!important;
+            color: white;
+
+        }
+        a, a:hover, a:active {
+            text-decoration: none;
+            color: inherit;
+            font-size:x-large;
+            
+
+        }
+
+      </style>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+    <script>
+    function SubForm(){
+      $.ajax({
+        url:"https://api.apispreadsheets.com/data/chHmb7PEXcvyuEyz/",
+        type:"post",
+        data:$("#myForm").serializeArray(),
+        success: function(){
+          alert("Form Data Submitted :)")
+        },
+        error: function(){
+          alert("There was an error :(")
+        }
+      });
+    }
+    </script>
+</head>
+
+<body>
+  <nav class="navbar">
+    <ul class="nav-list">
+
+        <a href="index.html"> ПОСЕЩАЕМОСТЬ &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;</a>
+        <a href="schedule.html"> РАСПИСАНИЕ &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;</a>
+        <a href="payment.html"> ОПЛАТА </a>
+        <a style="position:absolute;right:0"><img src="logo.png"></a>
+
+
+    </ul>
+  </nav>
+    
+    <p class="babas">НЕ ЗАБУДЬ ОТМЕТИТЬСЯ!</p>
+    <p class="baba">СРЦ Школа Плюс</p>
+    <div id="current_date"></p>
+      <script>
+      date = new Date();
+      year = date.getFullYear();
+      month = date.getMonth() + 1;
+      day = date.getDate();
+      document.getElementById("current_date").innerHTML = day + "/" + month + "/" + year;
+      </script>
+      
+    <hr>
+    <h1>Посещаемость СРЦ Школа Плюс</h1>
+
+    
+        <div class="container">
+          <form id="myForm" action="">
+            <label for="mystudent1"> Имя <sup>*</sup></label>
+            <div>
+
+                <input type="text" name="имя" id="mystudent1" placeholder="имя ученика" required>
+            </div>
+            </br>
+            <label for="mystudent">Фамилия <sup>*</sup></label>
+            <div>
+
+                <input type="text" name="фамилия" id="mystudent2" placeholder="фамилия ученика" required>
+            </div>
+          </br>
+            <label for="mycourse">Выбери предмет</label>
+            <select name="курс" id="dc">
+                <option value="егэ">ЕГЭ</option>
+                <option value="огэ">ОГЭ</option>
+                <option value="русский" selected>Русский язык</option>
+                <option value="математика">Математика</option>
+                <option value="информатика">Информатика</option>
+            </select>
+          </br>
+            <label for="mydate">Дата <sup>*</sup></label>
+            <div>
+                <input type="date" name="дата посещения" id="mydate" placeholder="дата" required>
+            </div>
+          </br> 
+          <label for="time">Время занятия:</label>
+          <input type="time" id="mytime" name="время занятия" required
+             min="10:00" max="18:00">
+        </br>
+            <hr>
+          
+            <p>Проверь свои данные!</p>
+            <input type="reset" value="Отчистить поля" class="res"> 
+          
+         </form>
+            
+            <button onclick="SubForm()" type="submit" class="sub">Подтвердить </button>
+     </div>       
+</body>
+
+</html>

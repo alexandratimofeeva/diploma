@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251 /">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание</title>
+    <style>
+        body {
+            font-family: 'Righteous', cursive;
+            background-image: linear-gradient(rgba(241, 207, 172, 0.5), rgba(245, 245, 208, 0.5)), url(2107095_generated.jpg);
+            background-attachment: fixed;
+        }
+        .mai {
+            opacity: 0.9;
+            height:980px;
+            width:770px;
+            border:none;
+            position:center;
+            align-self: center;
+            align-content:space-around;
+            top: 50rem;
+            border-radius: 1.5rem;
+            box-shadow: 4px 3px 20px #3535358c;
+            display:flex;
+            flex-direction: row;
+            opacity: 0.98;
+            
+        }
+        .nav-list  {
+          width: 100%;
+          height:50px;
+          display: inline-block;
+          align-items: center;
+          color: rgb(34, 25, 25);
+          text-decoration: none!important;
+          padding: 25px 25px;
+          background: rgb(191, 155, 155);
+          background-blend-mode: darken;
+          background-size: cover;
+          justify-content: center;
+        }
+
+        .nav-list li{
+            list-style: square;
+            width: max-content;
+            padding: 50px 30px;
+            text-decoration: none;
+            color: white;
+            font-family: 'Righteous', cursive;
+            background-blend-mode: darken;
+            background-size: cover;
+        }
+
+        .nav-list li a:hover{
+            text-decoration: none;
+            color: inherit;
+            background: rgb(195, 163, 163);
+            background-blend-mode: darken;
+            background-size: cover;
+            
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position:relative;
+            top: 0;
+            cursor: pointer;
+            text-decoration: none!important;
+            color: white;
+
+        }
+        a, a:hover, a:active {
+            text-decoration: none;
+            color: inherit;
+            font-size:xx-large;
+            
+
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-list">
+    
+            <a href="index.html"> ПОСЕЩАЕМОСТЬ &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;</a>
+            <a href="schedule.html"> РАСПИСАНИЕ &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;</a>
+            <a href="payment.html"> ОПЛАТА </a>
+            <a style="position:absolute;right:0"><img src="logo.png"></a>
+    
+    
+        </ul>
+      </nav>
+    <iframe class="mai" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTaWKkuuXklZfR9mJaqxoIhSgrtr3vKyKq8EJ6nZI25fkGAzcWK1TBT-m8n1XCCNJAOGZYAEFKcCdn9/pubhtml"></iframe>
+</body>
